@@ -8,10 +8,10 @@ coins to others at will.
 
 - (DONE) Allow a user to start an Auction with a given bidding period.
 
-- The Auction can be selected to be blind or not on creation. If blind, 
+- (DONE )The Auction can be selected to be blind or not on creation. If blind, 
 then no one can see other user's bids; otherwise, all users can see all 
 other users' bid.
 
-- For an Auction, the transfer will only be triggered if the bidding period 
+- (DONE) For an Auction, the transfer will only be triggered if the bidding period 
 ends. And only the one with the highest bid would need to transfer.
 
