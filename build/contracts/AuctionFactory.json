@@ -1,0 +1,2530 @@
+{
+  "contractName": "AuctionFactory",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "skillMeTokenAddr",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "auctions",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_tokenInUseAddr",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "auctionContract",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "blindAuction",
+          "type": "bool"
+        }
+      ],
+      "name": "AuctionCreated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_startBlock",
+          "type": "uint256"
+        },
+        {
+          "name": "_endBlock",
+          "type": "uint256"
+        },
+        {
+          "name": "_auctionBlind",
+          "type": "bool"
+        }
+      ],
+      "name": "createAuction",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "allAuctions",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"allAuctions\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"skillMeTokenAddr\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"auctions\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_startBlock\",\"type\":\"uint256\"},{\"name\":\"_endBlock\",\"type\":\"uint256\"},{\"name\":\"_auctionBlind\",\"type\":\"bool\"}],\"name\":\"createAuction\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_tokenInUseAddr\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"auctionContract\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"duration\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"blindAuction\",\"type\":\"bool\"}],\"name\":\"AuctionCreated\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"The Factory contract implementation the Auction process which Allows a user to start an auction process and not participate in the process and the winner withdraws all the money from the auction contract.\",\"methods\":{},\"title\":\"AuctionFactory\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/AuctionHouse/AuctionFactory.sol\":\"AuctionFactory\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/AuctionHouse/Auction.sol\":{\"keccak256\":\"0xdd0d78dbee0ebc0df9f3c672736649734289a0ced7522979c46314c5b706483a\",\"urls\":[\"bzzr://00b35905c748d6f40e457a1f6dec28298a8e977ac55ce40c72c57480b6ab6a18\"]},\"project:/contracts/AuctionHouse/AuctionFactory.sol\":{\"keccak256\":\"0xeda7f99b6d02b15ebf66495bf56f78ceae3d326710fb96e2ab1fd7d363d04417\",\"urls\":[\"bzzr://9221fa63b7ab0d43547147ec8f082b5b048514e7c50679f95edffa998a7425eb\"]},\"project:/contracts/interfaces/IERC20.sol\":{\"keccak256\":\"0xef3e734a0ab784c6cdaa959f501ee8c82e659ead03074b6625748f8577a3779e\",\"urls\":[\"bzzr://d5404cacdfcceb822bbc2c40ac65622fe599f000fa0fbebc49338cb51315e4c3\"]},\"project:/contracts/libs/BlackList.sol\":{\"keccak256\":\"0x120738cff7c5bce62cf4fd37a2b96ec849a292d9c234407b53e418af3d0038df\",\"urls\":[\"bzzr://5126fd97e332efa755b26a5ada6013b31eed432ff6b945c185f78e61e604d14b\"]},\"project:/contracts/libs/Ownable.sol\":{\"keccak256\":\"0xabdd93199134885898faae62369f4f9bbd86318cf13cf777af170b6735e09e07\",\"urls\":[\"bzzr://e1527df6233bf8397e5800f6195c60cf62b48447bfcbb49c78bb35fd9355d9e6\"]},\"project:/contracts/libs/Pausable.sol\":{\"keccak256\":\"0xf3d55ef29035b9dae089e77edb497627aec4d3238f3ae2cef645987be81f3762\",\"urls\":[\"bzzr://91670b008f838ae80733dc37819b4fcfe196d2eb73a48086d569a5fec2ed8feb\"]},\"project:/contracts/libs/SafeMath.sol\":{\"keccak256\":\"0x7bb7030f7a83b045fbe5e96455b256ca29c918d67bc31bc9d87e06a6a1029e09\",\"urls\":[\"bzzr://1d798b9d8fb504a44fb6cd661d95bddc0a9094eea83994434e0594da08fbfdd3\"]},\"project:/contracts/token/SkillMeToken.sol\":{\"keccak256\":\"0x64fd1b202cbbeab8c0dd1fe7588bbda905a6318eb5de952e33c92a882f9e69d9\",\"urls\":[\"bzzr://b0dcd4e47f486f8253855f467073a42a5428c13bf26144eb81e3ea93a615072b\"]},\"project:/contracts/token/StandardToken.sol\":{\"keccak256\":\"0xff98c35f3da2e5dc90ae661c1776118ff067d9522ef63f503fc98e800710d0d2\",\"urls\":[\"bzzr://98a7112663de3cae93f457853bd9a7e3e64479ead02c0768a2c6283df68ba370\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160208061163f8339810180604052602081101561003057600080fd5b810190808051906020019092919050505080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506115ad806100926000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631bbcd4a5146100515780635109f4b5146100b0578063571a26a0146100fa5780638569abfe14610168575b600080fd5b6100596101ec565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561009c578082015181840152602081019050610081565b505050509050019250505060405180910390f35b6100b861027a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101266004803603602081101561011057600080fd5b81019080803590602001909291905050506102a0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101aa6004803603606081101561017e57600080fd5b8101908080359060200190929190803590602001909291908035151590602001909291905050506102dc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6060600080548060200260200160405190810160405280929190818152602001828054801561027057602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610226575b5050505050905090565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600081815481106102ad57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600080600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16858585604051610311906104ca565b808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182151515158152602001945050505050604051809103906000f08015801561037c573d6000803e3d6000fd5b50905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060006103fa86866104b390919063ffffffff16565b90507ff8040ab495d8439df0133f194efe4194e487fb6efe8e4a3fab5a39ea6312062d82338387604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018215151515815260200194505050505060405180910390a181925050509392505050565b6000828211156104bf57fe5b818303905092915050565b6110aa806104d88339019056fe608060405234801561001057600080fd5b506040516080806110aa8339810180604052608081101561003057600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508183106100ab57600080fd5b4383106100b757600080fd5b83600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600560006101000a81548160ff021916908315150217905550826003819055508160048190555050505050610f36806101746000396000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c80638da5cb5b1161008c5780639979ef45116100665780639979ef4514610314578063d05414301461035a578063d3924aaf1461037c578063f2fde38b146103c6576100ea565b80638da5cb5b146102865780638fa8b790146102d057806390772867146102f2576100ea565b80633ccfd60b116100c85780633ccfd60b146101af57806348cd4cb1146101d15780635ba287e6146101ef57806363a39eac14610240576100ea565b8063083c6323146100ef578063280a65261461010d5780632e9a9d7f14610157575b600080fd5b6100f761040a565b6040518082815260200191505060405180910390f35b610115610410565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101996004803603602081101561016d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610436565b6040518082815260200191505060405180910390f35b6101b76104a0565b604051808215151515815260200191505060405180910390f35b6101d9610776565b6040518082815260200191505060405180910390f35b6101f761077c565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b61026c6004803603602081101561025657600080fd5b81019080803590602001909291905050506107ce565b604051808215151515815260200191505060405180910390f35b61028e6108be565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102d86108e3565b604051808215151515815260200191505060405180910390f35b6102fa6109b5565b604051808215151515815260200191505060405180910390f35b6103406004803603602081101561032a57600080fd5b81019080803590602001909291905050506109c8565b604051808215151515815260200191505060405180910390f35b610362610de4565b604051808215151515815260200191505060405180910390f35b610384610df7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610408600480360360208110156103dc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610e1d565b005b60045481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060011515600560009054906101000a900460ff161515141561045957600080fd5b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b60006004544310156104b157600080fd5b600560019054906101000a900460ff16156104cb57600080fd5b600560029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461052557600080fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b1580156105c657600080fd5b505afa1580156105da573d6000803e3d6000fd5b505050506040513d60208110156105f057600080fd5b81019080805190602001909291905050509050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33836040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156106ac57600080fd5b505af11580156106c0573d6000803e3d6000fd5b505050506040513d60208110156106d657600080fd5b8101908080519060200190929190505050506001600560016101000a81548160ff0219169083151502179055507fb4214c8c54fc7442f36d3682f59aebaf09358a4431835b30efb29d52cf9e1e913382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1600191505090565b60035481565b60008060011515600560009054906101000a900460ff16151514156107a057600080fd5b600560029054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600654915091509091565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663095ea7b330846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b15801561087957600080fd5b505af115801561088d573d6000803e3d6000fd5b505050506040513d60208110156108a357600080fd5b81019080805190602001909291905050505060019050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461093f57600080fd5b600454431061094d57600080fd5b600560019054906101000a900460ff161561096757600080fd5b6001600560016101000a81548160ff0219169083151502179055507f462b6ca7f632601af1295aeb320851f50e8e630a309173f23535845ea4bfb3b960405160405180910390a16001905090565b600560009054906101000a900460ff1681565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610a2557600080fd5b600354431015610a3457600080fd5b6004544310610a4257600080fd5b600560019054906101000a900460ff1615610a5c57600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231336040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b158015610afb57600080fd5b505afa158015610b0f573d6000803e3d6000fd5b505050506040513d6020811015610b2557600080fd5b8101908080519060200190929190505050821115610b4257600080fd5b6000610b9683600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610eee90919063ffffffff16565b90506006548111610ba657600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166323b872dd3330866040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b158015610c8357600080fd5b505af1158015610c97573d6000803e3d6000fd5b505050506040513d6020811015610cad57600080fd5b81019080805190602001909291905050505080600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508060068190555033600560026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f5331b3a4532c2507900f549683f076c051f92222c177b52f82f140d8667d3ebf600560029054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600654604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a16001915050919050565b600560019054906101000a900460ff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610e7657600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614610eeb57806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600080828401905083811015610f0057fe5b809150509291505056fea165627a7a72305820e399871e02de47e1ffbfaaac1aae86f244f288d175aab6c1afa71d5deb6458e70029a165627a7a72305820082afb802b087d9357290233dcd8c4d30500d06be8f3171b732a01ad74f8b1770029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80631bbcd4a5146100515780635109f4b5146100b0578063571a26a0146100fa5780638569abfe14610168575b600080fd5b6100596101ec565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561009c578082015181840152602081019050610081565b505050509050019250505060405180910390f35b6100b861027a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101266004803603602081101561011057600080fd5b81019080803590602001909291905050506102a0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101aa6004803603606081101561017e57600080fd5b8101908080359060200190929190803590602001909291908035151590602001909291905050506102dc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6060600080548060200260200160405190810160405280929190818152602001828054801561027057602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610226575b5050505050905090565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600081815481106102ad57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600080600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16858585604051610311906104ca565b808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182151515158152602001945050505050604051809103906000f08015801561037c573d6000803e3d6000fd5b50905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060006103fa86866104b390919063ffffffff16565b90507ff8040ab495d8439df0133f194efe4194e487fb6efe8e4a3fab5a39ea6312062d82338387604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018215151515815260200194505050505060405180910390a181925050509392505050565b6000828211156104bf57fe5b818303905092915050565b6110aa806104d88339019056fe608060405234801561001057600080fd5b506040516080806110aa8339810180604052608081101561003057600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508183106100ab57600080fd5b4383106100b757600080fd5b83600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600560006101000a81548160ff021916908315150217905550826003819055508160048190555050505050610f36806101746000396000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c80638da5cb5b1161008c5780639979ef45116100665780639979ef4514610314578063d05414301461035a578063d3924aaf1461037c578063f2fde38b146103c6576100ea565b80638da5cb5b146102865780638fa8b790146102d057806390772867146102f2576100ea565b80633ccfd60b116100c85780633ccfd60b146101af57806348cd4cb1146101d15780635ba287e6146101ef57806363a39eac14610240576100ea565b8063083c6323146100ef578063280a65261461010d5780632e9a9d7f14610157575b600080fd5b6100f761040a565b6040518082815260200191505060405180910390f35b610115610410565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101996004803603602081101561016d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610436565b6040518082815260200191505060405180910390f35b6101b76104a0565b604051808215151515815260200191505060405180910390f35b6101d9610776565b6040518082815260200191505060405180910390f35b6101f761077c565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b61026c6004803603602081101561025657600080fd5b81019080803590602001909291905050506107ce565b604051808215151515815260200191505060405180910390f35b61028e6108be565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102d86108e3565b604051808215151515815260200191505060405180910390f35b6102fa6109b5565b604051808215151515815260200191505060405180910390f35b6103406004803603602081101561032a57600080fd5b81019080803590602001909291905050506109c8565b604051808215151515815260200191505060405180910390f35b610362610de4565b604051808215151515815260200191505060405180910390f35b610384610df7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610408600480360360208110156103dc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610e1d565b005b60045481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060011515600560009054906101000a900460ff161515141561045957600080fd5b600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b60006004544310156104b157600080fd5b600560019054906101000a900460ff16156104cb57600080fd5b600560029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461052557600080fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b1580156105c657600080fd5b505afa1580156105da573d6000803e3d6000fd5b505050506040513d60208110156105f057600080fd5b81019080805190602001909291905050509050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a9059cbb33836040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156106ac57600080fd5b505af11580156106c0573d6000803e3d6000fd5b505050506040513d60208110156106d657600080fd5b8101908080519060200190929190505050506001600560016101000a81548160ff0219169083151502179055507fb4214c8c54fc7442f36d3682f59aebaf09358a4431835b30efb29d52cf9e1e913382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1600191505090565b60035481565b60008060011515600560009054906101000a900460ff16151514156107a057600080fd5b600560029054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600654915091509091565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663095ea7b330846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b15801561087957600080fd5b505af115801561088d573d6000803e3d6000fd5b505050506040513d60208110156108a357600080fd5b81019080805190602001909291905050505060019050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461093f57600080fd5b600454431061094d57600080fd5b600560019054906101000a900460ff161561096757600080fd5b6001600560016101000a81548160ff0219169083151502179055507f462b6ca7f632601af1295aeb320851f50e8e630a309173f23535845ea4bfb3b960405160405180910390a16001905090565b600560009054906101000a900460ff1681565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610a2557600080fd5b600354431015610a3457600080fd5b6004544310610a4257600080fd5b600560019054906101000a900460ff1615610a5c57600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231336040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b158015610afb57600080fd5b505afa158015610b0f573d6000803e3d6000fd5b505050506040513d6020811015610b2557600080fd5b8101908080519060200190929190505050821115610b4257600080fd5b6000610b9683600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610eee90919063ffffffff16565b90506006548111610ba657600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166323b872dd3330866040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b158015610c8357600080fd5b505af1158015610c97573d6000803e3d6000fd5b505050506040513d6020811015610cad57600080fd5b81019080805190602001909291905050505080600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508060068190555033600560026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f5331b3a4532c2507900f549683f076c051f92222c177b52f82f140d8667d3ebf600560029054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600654604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a16001915050919050565b600560019054906101000a900460ff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610e7657600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614610eeb57806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600080828401905083811015610f0057fe5b809150509291505056fea165627a7a72305820e399871e02de47e1ffbfaaac1aae86f244f288d175aab6c1afa71d5deb6458e70029a165627a7a72305820082afb802b087d9357290233dcd8c4d30500d06be8f3171b732a01ad74f8b1770029",
+  "sourceMap": "406:1052:1:-;;;680:163;8:9:-1;5:2;;;30:1;27;20:12;5:2;680:163:1;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;680:163:1;;;;;;;;;;;;;;;;821:15;802:16;;:34;;;;;;;;;;;;;;;;;;680:163;406:1052;;;;;;",
+  "deployedSourceMap": "406:1052:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;406:1052:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1362:94;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1362:94:1;;;;;;;;;;;;;;;;;500:31;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;469:25;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;469:25:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;849:507;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;849:507:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1362:94;1406:16;1441:8;1434:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1362:94;:::o;500:31::-;;;;;;;;;;;;;:::o;469:25::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;849:507::-;978:7;997:18;1043:16;;;;;;;;;;;1073:11;1098:9;1121:13;1018:126;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1018:126:1;997:147;;1154:8;1176:10;1154:34;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1154:34:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1198:16;1217:26;1231:11;1217:9;:13;;:26;;;;:::i;:::-;1198:45;;1259:63;1274:10;1286;1298:8;1308:13;1259:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1339:10;1332:17;;;;849:507;;;;;:::o;286:120:6:-;344:7;375:1;370;:6;;363:14;;;;398:1;394;:5;387:12;;286:120;;;;:::o;406:1052:1:-;;;;;;;;:::o",
+  "source": "pragma solidity 0.5.8;\n\nimport \"./Auction.sol\";\nimport \"../libs/SafeMath.sol\";\nimport \"../interfaces/IERC20.sol\";\nimport \"../token/SkillMeToken.sol\";\n\n/**\n * @title AuctionFactory\n *\n * @dev The Factory contract implementation the Auction process which Allows\n * a user to start an auction process and not participate in the process and\n * the winner withdraws all the money from the auction contract.\n */\ncontract AuctionFactory {\n    using SafeMath for uint256;\n\n    address[] public auctions;\n    address public skillMeTokenAddr;\n\n    event AuctionCreated(\n        Auction auctionContract,\n        address owner,\n        uint256 duration,\n        bool blindAuction\n    );\n\n    constructor(address _tokenInUseAddr) public {\n        // I did not check if _tokeninUseAddr is a contract address\n        skillMeTokenAddr = _tokenInUseAddr;\n    }\n\n    function createAuction(\n        uint256 _startBlock,\n        uint256 _endBlock,\n        bool _auctionBlind\n    ) public returns (Auction) {\n        Auction newAuction = new Auction(\n            skillMeTokenAddr,\n            _startBlock,\n            _endBlock,\n            _auctionBlind\n        );\n        auctions.push(address(newAuction));\n        uint256 duration = _endBlock.sub(_startBlock);\n\n        emit AuctionCreated(newAuction, msg.sender, duration, _auctionBlind);\n        return newAuction;\n    }\n\n    function allAuctions() public view returns (address[] memory) {\n        return auctions;\n    }\n}\n",
+  "sourcePath": "/Users/mac/Desktop/SkillMeProject/contracts/AuctionHouse/AuctionFactory.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/AuctionHouse/AuctionFactory.sol",
+    "exportedSymbols": {
+      "AuctionFactory": [
+        448
+      ]
+    },
+    "id": 449,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 359,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:1"
+      },
+      {
+        "absolutePath": "project:/contracts/AuctionHouse/Auction.sol",
+        "file": "./Auction.sol",
+        "id": 360,
+        "nodeType": "ImportDirective",
+        "scope": 449,
+        "sourceUnit": 358,
+        "src": "24:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/libs/SafeMath.sol",
+        "file": "../libs/SafeMath.sol",
+        "id": 361,
+        "nodeType": "ImportDirective",
+        "scope": 449,
+        "sourceUnit": 838,
+        "src": "48:30:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/interfaces/IERC20.sol",
+        "file": "../interfaces/IERC20.sol",
+        "id": 362,
+        "nodeType": "ImportDirective",
+        "scope": 449,
+        "sourceUnit": 518,
+        "src": "79:34:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/token/SkillMeToken.sol",
+        "file": "../token/SkillMeToken.sol",
+        "id": 363,
+        "nodeType": "ImportDirective",
+        "scope": 449,
+        "sourceUnit": 1114,
+        "src": "114:35:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          357
+        ],
+        "contractKind": "contract",
+        "documentation": "@title AuctionFactory\n * @dev The Factory contract implementation the Auction process which Allows\na user to start an auction process and not participate in the process and\nthe winner withdraws all the money from the auction contract.",
+        "fullyImplemented": true,
+        "id": 448,
+        "linearizedBaseContracts": [
+          448
+        ],
+        "name": "AuctionFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 366,
+            "libraryName": {
+              "contractScope": null,
+              "id": 364,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 837,
+              "src": "442:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$837",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "436:27:1",
+            "typeName": {
+              "id": 365,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "455:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 369,
+            "name": "auctions",
+            "nodeType": "VariableDeclaration",
+            "scope": 448,
+            "src": "469:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 367,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "469:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 368,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "469:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 371,
+            "name": "skillMeTokenAddr",
+            "nodeType": "VariableDeclaration",
+            "scope": 448,
+            "src": "500:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 370,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "500:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 381,
+            "name": "AuctionCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 380,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 373,
+                  "indexed": false,
+                  "name": "auctionContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "568:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Auction_$357",
+                    "typeString": "contract Auction"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 372,
+                    "name": "Auction",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 357,
+                    "src": "568:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Auction_$357",
+                      "typeString": "contract Auction"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 375,
+                  "indexed": false,
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "601:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "601:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 377,
+                  "indexed": false,
+                  "name": "duration",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "624:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 376,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "624:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 379,
+                  "indexed": false,
+                  "name": "blindAuction",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "650:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 378,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "650:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:115:1"
+            },
+            "src": "538:136:1"
+          },
+          {
+            "body": {
+              "id": 390,
+              "nodeType": "Block",
+              "src": "724:119:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 388,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 386,
+                      "name": "skillMeTokenAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 371,
+                      "src": "802:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 387,
+                      "name": "_tokenInUseAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 383,
+                      "src": "821:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "802:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 389,
+                  "nodeType": "ExpressionStatement",
+                  "src": "802:34:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 391,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 384,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 383,
+                  "name": "_tokenInUseAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 391,
+                  "src": "692:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "692:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "691:25:1"
+            },
+            "returnParameters": {
+              "id": 385,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "724:0:1"
+            },
+            "scope": 448,
+            "src": "680:163:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 437,
+              "nodeType": "Block",
+              "src": "987:369:1",
+              "statements": [
+                {
+                  "assignments": [
+                    403
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 403,
+                      "name": "newAuction",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 437,
+                      "src": "997:18:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Auction_$357",
+                        "typeString": "contract Auction"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 402,
+                        "name": "Auction",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 357,
+                        "src": "997:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Auction_$357",
+                          "typeString": "contract Auction"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 411,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 406,
+                        "name": "skillMeTokenAddr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 371,
+                        "src": "1043:16:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 407,
+                        "name": "_startBlock",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 393,
+                        "src": "1073:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 408,
+                        "name": "_endBlock",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 395,
+                        "src": "1098:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 409,
+                        "name": "_auctionBlind",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "1121:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 405,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "1018:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_contract$_Auction_$357_$",
+                        "typeString": "function (address,uint256,uint256,bool) returns (contract Auction)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 404,
+                        "name": "Auction",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 357,
+                        "src": "1022:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Auction_$357",
+                          "typeString": "contract Auction"
+                        }
+                      }
+                    },
+                    "id": 410,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1018:126:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Auction_$357",
+                      "typeString": "contract Auction"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "997:147:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 416,
+                            "name": "newAuction",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 403,
+                            "src": "1176:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Auction_$357",
+                              "typeString": "contract Auction"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Auction_$357",
+                              "typeString": "contract Auction"
+                            }
+                          ],
+                          "id": 415,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1168:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 417,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1168:19:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 412,
+                        "name": "auctions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1154:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 414,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1154:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 418,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1154:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 419,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1154:34:1"
+                },
+                {
+                  "assignments": [
+                    421
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 421,
+                      "name": "duration",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 437,
+                      "src": "1198:16:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 420,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1198:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 426,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 424,
+                        "name": "_startBlock",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 393,
+                        "src": "1231:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 422,
+                        "name": "_endBlock",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 395,
+                        "src": "1217:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 423,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sub",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 785,
+                      "src": "1217:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 425,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1217:26:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1198:45:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 428,
+                        "name": "newAuction",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 403,
+                        "src": "1274:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Auction_$357",
+                          "typeString": "contract Auction"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 429,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1451,
+                          "src": "1286:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 430,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1286:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 431,
+                        "name": "duration",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 421,
+                        "src": "1298:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 432,
+                        "name": "_auctionBlind",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "1308:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Auction_$357",
+                          "typeString": "contract Auction"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 427,
+                      "name": "AuctionCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 381,
+                      "src": "1259:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Auction_$357_$_t_address_$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (contract Auction,address,uint256,bool)"
+                      }
+                    },
+                    "id": 433,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1259:63:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 434,
+                  "nodeType": "EmitStatement",
+                  "src": "1254:68:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 435,
+                    "name": "newAuction",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 403,
+                    "src": "1339:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Auction_$357",
+                      "typeString": "contract Auction"
+                    }
+                  },
+                  "functionReturnParameters": 401,
+                  "id": 436,
+                  "nodeType": "Return",
+                  "src": "1332:17:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 438,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createAuction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 393,
+                  "name": "_startBlock",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 438,
+                  "src": "881:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 392,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "881:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 395,
+                  "name": "_endBlock",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 438,
+                  "src": "910:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 394,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "910:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 397,
+                  "name": "_auctionBlind",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 438,
+                  "src": "937:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 396,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "937:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "871:90:1"
+            },
+            "returnParameters": {
+              "id": 401,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 400,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 438,
+                  "src": "978:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Auction_$357",
+                    "typeString": "contract Auction"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 399,
+                    "name": "Auction",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 357,
+                    "src": "978:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Auction_$357",
+                      "typeString": "contract Auction"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "977:9:1"
+            },
+            "scope": 448,
+            "src": "849:507:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 446,
+              "nodeType": "Block",
+              "src": "1424:32:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 444,
+                    "name": "auctions",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 369,
+                    "src": "1441:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 443,
+                  "id": 445,
+                  "nodeType": "Return",
+                  "src": "1434:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 447,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "allAuctions",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 439,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1382:2:1"
+            },
+            "returnParameters": {
+              "id": 443,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 442,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 447,
+                  "src": "1406:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 440,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1406:7:1",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 441,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1406:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1405:18:1"
+            },
+            "scope": 448,
+            "src": "1362:94:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 449,
+        "src": "406:1052:1"
+      }
+    ],
+    "src": "0:1459:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/AuctionHouse/AuctionFactory.sol",
+      "exportedSymbols": {
+        "AuctionFactory": [
+          448
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.5",
+            ".8"
+          ]
+        },
+        "id": 359,
+        "name": "PragmaDirective",
+        "src": "0:22:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 358,
+          "absolutePath": "project:/contracts/AuctionHouse/Auction.sol",
+          "file": "./Auction.sol",
+          "scope": 449,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 360,
+        "name": "ImportDirective",
+        "src": "24:23:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 838,
+          "absolutePath": "project:/contracts/libs/SafeMath.sol",
+          "file": "../libs/SafeMath.sol",
+          "scope": 449,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 361,
+        "name": "ImportDirective",
+        "src": "48:30:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 518,
+          "absolutePath": "project:/contracts/interfaces/IERC20.sol",
+          "file": "../interfaces/IERC20.sol",
+          "scope": 449,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 362,
+        "name": "ImportDirective",
+        "src": "79:34:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1114,
+          "absolutePath": "project:/contracts/token/SkillMeToken.sol",
+          "file": "../token/SkillMeToken.sol",
+          "scope": 449,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 363,
+        "name": "ImportDirective",
+        "src": "114:35:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            357
+          ],
+          "contractKind": "contract",
+          "documentation": "@title AuctionFactory\n * @dev The Factory contract implementation the Auction process which Allows\na user to start an auction process and not participate in the process and\nthe winner withdraws all the money from the auction contract.",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            448
+          ],
+          "name": "AuctionFactory",
+          "scope": 449
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SafeMath",
+                  "referencedDeclaration": 837,
+                  "type": "library SafeMath"
+                },
+                "id": 364,
+                "name": "UserDefinedTypeName",
+                "src": "442:8:1"
+              },
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 365,
+                "name": "ElementaryTypeName",
+                "src": "455:7:1"
+              }
+            ],
+            "id": 366,
+            "name": "UsingForDirective",
+            "src": "436:27:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "auctions",
+              "scope": 448,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "address[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 367,
+                    "name": "ElementaryTypeName",
+                    "src": "469:7:1"
+                  }
+                ],
+                "id": 368,
+                "name": "ArrayTypeName",
+                "src": "469:9:1"
+              }
+            ],
+            "id": 369,
+            "name": "VariableDeclaration",
+            "src": "469:25:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "skillMeTokenAddr",
+              "scope": 448,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 370,
+                "name": "ElementaryTypeName",
+                "src": "500:7:1"
+              }
+            ],
+            "id": 371,
+            "name": "VariableDeclaration",
+            "src": "500:31:1"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "AuctionCreated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "auctionContract",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract Auction",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Auction",
+                          "referencedDeclaration": 357,
+                          "type": "contract Auction"
+                        },
+                        "id": 372,
+                        "name": "UserDefinedTypeName",
+                        "src": "568:7:1"
+                      }
+                    ],
+                    "id": 373,
+                    "name": "VariableDeclaration",
+                    "src": "568:23:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "owner",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 374,
+                        "name": "ElementaryTypeName",
+                        "src": "601:7:1"
+                      }
+                    ],
+                    "id": 375,
+                    "name": "VariableDeclaration",
+                    "src": "601:13:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "duration",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 376,
+                        "name": "ElementaryTypeName",
+                        "src": "624:7:1"
+                      }
+                    ],
+                    "id": 377,
+                    "name": "VariableDeclaration",
+                    "src": "624:16:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "blindAuction",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 378,
+                        "name": "ElementaryTypeName",
+                        "src": "650:4:1"
+                      }
+                    ],
+                    "id": 379,
+                    "name": "VariableDeclaration",
+                    "src": "650:17:1"
+                  }
+                ],
+                "id": 380,
+                "name": "ParameterList",
+                "src": "558:115:1"
+              }
+            ],
+            "id": 381,
+            "name": "EventDefinition",
+            "src": "538:136:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 448,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_tokenInUseAddr",
+                      "scope": 391,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 382,
+                        "name": "ElementaryTypeName",
+                        "src": "692:7:1"
+                      }
+                    ],
+                    "id": 383,
+                    "name": "VariableDeclaration",
+                    "src": "692:23:1"
+                  }
+                ],
+                "id": 384,
+                "name": "ParameterList",
+                "src": "691:25:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 385,
+                "name": "ParameterList",
+                "src": "724:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 371,
+                              "type": "address",
+                              "value": "skillMeTokenAddr"
+                            },
+                            "id": 386,
+                            "name": "Identifier",
+                            "src": "802:16:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 383,
+                              "type": "address",
+                              "value": "_tokenInUseAddr"
+                            },
+                            "id": 387,
+                            "name": "Identifier",
+                            "src": "821:15:1"
+                          }
+                        ],
+                        "id": 388,
+                        "name": "Assignment",
+                        "src": "802:34:1"
+                      }
+                    ],
+                    "id": 389,
+                    "name": "ExpressionStatement",
+                    "src": "802:34:1"
+                  }
+                ],
+                "id": 390,
+                "name": "Block",
+                "src": "724:119:1"
+              }
+            ],
+            "id": 391,
+            "name": "FunctionDefinition",
+            "src": "680:163:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createAuction",
+              "scope": 448,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_startBlock",
+                      "scope": 438,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 392,
+                        "name": "ElementaryTypeName",
+                        "src": "881:7:1"
+                      }
+                    ],
+                    "id": 393,
+                    "name": "VariableDeclaration",
+                    "src": "881:19:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_endBlock",
+                      "scope": 438,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 394,
+                        "name": "ElementaryTypeName",
+                        "src": "910:7:1"
+                      }
+                    ],
+                    "id": 395,
+                    "name": "VariableDeclaration",
+                    "src": "910:17:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_auctionBlind",
+                      "scope": 438,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 396,
+                        "name": "ElementaryTypeName",
+                        "src": "937:4:1"
+                      }
+                    ],
+                    "id": 397,
+                    "name": "VariableDeclaration",
+                    "src": "937:18:1"
+                  }
+                ],
+                "id": 398,
+                "name": "ParameterList",
+                "src": "871:90:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 438,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract Auction",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Auction",
+                          "referencedDeclaration": 357,
+                          "type": "contract Auction"
+                        },
+                        "id": 399,
+                        "name": "UserDefinedTypeName",
+                        "src": "978:7:1"
+                      }
+                    ],
+                    "id": 400,
+                    "name": "VariableDeclaration",
+                    "src": "978:7:1"
+                  }
+                ],
+                "id": 401,
+                "name": "ParameterList",
+                "src": "977:9:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        403
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "newAuction",
+                          "scope": 437,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "contract Auction",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Auction",
+                              "referencedDeclaration": 357,
+                              "type": "contract Auction"
+                            },
+                            "id": 402,
+                            "name": "UserDefinedTypeName",
+                            "src": "997:7:1"
+                          }
+                        ],
+                        "id": 403,
+                        "name": "VariableDeclaration",
+                        "src": "997:18:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "contract Auction",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "function (address,uint256,uint256,bool) returns (contract Auction)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "contractScope": null,
+                                  "name": "Auction",
+                                  "referencedDeclaration": 357,
+                                  "type": "contract Auction"
+                                },
+                                "id": 404,
+                                "name": "UserDefinedTypeName",
+                                "src": "1022:7:1"
+                              }
+                            ],
+                            "id": 405,
+                            "name": "NewExpression",
+                            "src": "1018:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 371,
+                              "type": "address",
+                              "value": "skillMeTokenAddr"
+                            },
+                            "id": 406,
+                            "name": "Identifier",
+                            "src": "1043:16:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 393,
+                              "type": "uint256",
+                              "value": "_startBlock"
+                            },
+                            "id": 407,
+                            "name": "Identifier",
+                            "src": "1073:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 395,
+                              "type": "uint256",
+                              "value": "_endBlock"
+                            },
+                            "id": 408,
+                            "name": "Identifier",
+                            "src": "1098:9:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 397,
+                              "type": "bool",
+                              "value": "_auctionBlind"
+                            },
+                            "id": 409,
+                            "name": "Identifier",
+                            "src": "1121:13:1"
+                          }
+                        ],
+                        "id": 410,
+                        "name": "FunctionCall",
+                        "src": "1018:126:1"
+                      }
+                    ],
+                    "id": 411,
+                    "name": "VariableDeclarationStatement",
+                    "src": "997:147:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (address) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 369,
+                                  "type": "address[] storage ref",
+                                  "value": "auctions"
+                                },
+                                "id": 412,
+                                "name": "Identifier",
+                                "src": "1154:8:1"
+                              }
+                            ],
+                            "id": 414,
+                            "name": "MemberAccess",
+                            "src": "1154:13:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "address",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_Auction_$357",
+                                      "typeString": "contract Auction"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(address)",
+                                  "value": "address"
+                                },
+                                "id": 415,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "1168:7:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 403,
+                                  "type": "contract Auction",
+                                  "value": "newAuction"
+                                },
+                                "id": 416,
+                                "name": "Identifier",
+                                "src": "1176:10:1"
+                              }
+                            ],
+                            "id": 417,
+                            "name": "FunctionCall",
+                            "src": "1168:19:1"
+                          }
+                        ],
+                        "id": 418,
+                        "name": "FunctionCall",
+                        "src": "1154:34:1"
+                      }
+                    ],
+                    "id": 419,
+                    "name": "ExpressionStatement",
+                    "src": "1154:34:1"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        421
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "duration",
+                          "scope": 437,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 420,
+                            "name": "ElementaryTypeName",
+                            "src": "1198:7:1"
+                          }
+                        ],
+                        "id": 421,
+                        "name": "VariableDeclaration",
+                        "src": "1198:16:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sub",
+                              "referencedDeclaration": 785,
+                              "type": "function (uint256,uint256) pure returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 395,
+                                  "type": "uint256",
+                                  "value": "_endBlock"
+                                },
+                                "id": 422,
+                                "name": "Identifier",
+                                "src": "1217:9:1"
+                              }
+                            ],
+                            "id": 423,
+                            "name": "MemberAccess",
+                            "src": "1217:13:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 393,
+                              "type": "uint256",
+                              "value": "_startBlock"
+                            },
+                            "id": 424,
+                            "name": "Identifier",
+                            "src": "1231:11:1"
+                          }
+                        ],
+                        "id": 425,
+                        "name": "FunctionCall",
+                        "src": "1217:26:1"
+                      }
+                    ],
+                    "id": 426,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1198:45:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_Auction_$357",
+                                  "typeString": "contract Auction"
+                                },
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 381,
+                              "type": "function (contract Auction,address,uint256,bool)",
+                              "value": "AuctionCreated"
+                            },
+                            "id": 427,
+                            "name": "Identifier",
+                            "src": "1259:14:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 403,
+                              "type": "contract Auction",
+                              "value": "newAuction"
+                            },
+                            "id": 428,
+                            "name": "Identifier",
+                            "src": "1274:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1451,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 429,
+                                "name": "Identifier",
+                                "src": "1286:3:1"
+                              }
+                            ],
+                            "id": 430,
+                            "name": "MemberAccess",
+                            "src": "1286:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 421,
+                              "type": "uint256",
+                              "value": "duration"
+                            },
+                            "id": 431,
+                            "name": "Identifier",
+                            "src": "1298:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 397,
+                              "type": "bool",
+                              "value": "_auctionBlind"
+                            },
+                            "id": 432,
+                            "name": "Identifier",
+                            "src": "1308:13:1"
+                          }
+                        ],
+                        "id": 433,
+                        "name": "FunctionCall",
+                        "src": "1259:63:1"
+                      }
+                    ],
+                    "id": 434,
+                    "name": "EmitStatement",
+                    "src": "1254:68:1"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 401
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 403,
+                          "type": "contract Auction",
+                          "value": "newAuction"
+                        },
+                        "id": 435,
+                        "name": "Identifier",
+                        "src": "1339:10:1"
+                      }
+                    ],
+                    "id": 436,
+                    "name": "Return",
+                    "src": "1332:17:1"
+                  }
+                ],
+                "id": 437,
+                "name": "Block",
+                "src": "987:369:1"
+              }
+            ],
+            "id": 438,
+            "name": "FunctionDefinition",
+            "src": "849:507:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "allAuctions",
+              "scope": 448,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 439,
+                "name": "ParameterList",
+                "src": "1382:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 447,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 440,
+                            "name": "ElementaryTypeName",
+                            "src": "1406:7:1"
+                          }
+                        ],
+                        "id": 441,
+                        "name": "ArrayTypeName",
+                        "src": "1406:9:1"
+                      }
+                    ],
+                    "id": 442,
+                    "name": "VariableDeclaration",
+                    "src": "1406:16:1"
+                  }
+                ],
+                "id": 443,
+                "name": "ParameterList",
+                "src": "1405:18:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 443
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 369,
+                          "type": "address[] storage ref",
+                          "value": "auctions"
+                        },
+                        "id": 444,
+                        "name": "Identifier",
+                        "src": "1441:8:1"
+                      }
+                    ],
+                    "id": 445,
+                    "name": "Return",
+                    "src": "1434:15:1"
+                  }
+                ],
+                "id": 446,
+                "name": "Block",
+                "src": "1424:32:1"
+              }
+            ],
+            "id": 447,
+            "name": "FunctionDefinition",
+            "src": "1362:94:1"
+          }
+        ],
+        "id": 448,
+        "name": "ContractDefinition",
+        "src": "406:1052:1"
+      }
+    ],
+    "id": 449,
+    "name": "SourceUnit",
+    "src": "0:1459:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-10-29T11:58:15.762Z",
+  "devdoc": {
+    "details": "The Factory contract implementation the Auction process which Allows a user to start an auction process and not participate in the process and the winner withdraws all the money from the auction contract.",
+    "methods": {},
+    "title": "AuctionFactory"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
